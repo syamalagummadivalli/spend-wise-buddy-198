@@ -1,3 +1,4 @@
 import {queryOptions} from '@tanstack/react-query';
-import {getFinance} from './finance.functions';
-export const financeQuery=queryOptions({queryKey:['finance'],queryFn:()=>getFinance()});
+import {loadFinance, loadName} from './finance-storage';
+export const financeQuery=queryOptions({queryKey:['finance'],queryFn:async()=>loadFinance(),staleTime:Infinity});
+export const nameQuery=queryOptions({queryKey:['display-name'],queryFn:async()=>loadName(),staleTime:Infinity});
