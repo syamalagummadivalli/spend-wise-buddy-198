@@ -13,7 +13,7 @@ export function summarize(transactions:Transaction[],month:string,budget:number)
  const categories=expenseCategories.map(name=>({name,value:rows.filter(t=>t.type==='expense'&&t.category===name).reduce((s,t)=>s+t.amount,0)}));
  return {rows,income,expenses,balance:income-expenses,budget,progress:budget>0?expenses/budget*100:0,categories};
 }
-export function monthsEnding(end:string,count:number){const [y,m]=end.split('-').map(Number);return Array.from({length:count},(_,i)=>{const d=new Date(Date.UTC(y,m-1-(count-1-i),1));return d.toISOString().slice(0,7);});}
+export function monthsEnding(end:string,count:number){const y=Number(end.slice(0,4)),m=Number(end.slice(5,7));return Array.from({length:count},(_,i)=>{const d=new Date(Date.UTC(y,m-1-(count-1-i),1));return d.toISOString().slice(0,7);});}
 export function report(transactions:Transaction[],budgets:Record<string,number>,months:string[]){
  const trend=months.map(month=>{const s=summarize(transactions,month,budgets[month]??0);return {month,income:s.income,expenses:s.expenses,budget:s.budget,savings:s.balance};});
  const rows=transactions.filter(t=>months.includes(t.date.slice(0,7)));
