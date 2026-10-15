@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { financeQuery, nameQuery } from '@/lib/finance-query';
 import { saveFinanceLocal, saveName } from '@/lib/finance-storage';
-import { money, summarize, transactionSchema, expenseCategories, incomeCategories, monthsEnding, report, reportRange, validateRange, lastDay, type Transaction, type FinanceState } from '@/lib/finance';
+import { money, summarize, transactionSchema, expenseCategories, incomeCategories, monthsEnding, reportRange, validateRange, lastDay, type Transaction, type FinanceState } from '@/lib/finance';
 import walletImage from '@/assets/wallet.jpg';
 export type View='dashboard'|'transactions'|'budgets'|'categories'|'reports'|'settings';
 const titles={dashboard:'Dashboard',transactions:'Transactions',budgets:'Monthly budget',categories:'Categories',reports:'Reports & Analytics',settings:'Settings'};
