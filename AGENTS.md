@@ -10,5 +10,5 @@
 <!-- LOVABLE:END -->
 
 - Keep finance calculations and validation in a browser-safe module shared by charts, summaries, forms, and tests so financial values cannot drift.
-- Store personal finance workspaces in Cloud behind unguessable HttpOnly cookie capabilities, with no public table access; the initial sample workspace is read-only until an explicit save creates a private copy.
-- Use a shared finance screen and shell for dashboard, transactions, budgets, and categories, with separate leaf routes and metadata.
+- Persist finance data in browser localStorage via src/lib/finance-storage.ts (finance routes use ssr:false); sample data is written only when nothing valid is saved — cookies in the cross-site preview iframe were unreliable.
+- Use a shared finance screen and shell for dashboard, transactions, budgets, categories, reports, and settings, with separate leaf routes and metadata.

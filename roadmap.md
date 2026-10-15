@@ -1,3 +1,6 @@
 - [x] Dashboard and responsive navigation
 - [x] Persistent transactions and monthly budgets
-- [x] Verify totals, editing, deleting, and mobile layout
+- [x] Verify totals, editing, deleting, and mobile layout- [x] Save data in the browser so it survives refresh
+- [x] Scrollable sidebar with Settings
+- [x] Reports & Analytics page
+- [x] Verify add/edit/delete/budget persistence
