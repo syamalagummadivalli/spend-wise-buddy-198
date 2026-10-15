@@ -1,0 +1,3 @@
+- [ ] Dashboard and responsive navigation
+- [ ] Persistent transactions and monthly budgets
+- [ ] Verify totals, editing, deleting, and mobile layout
