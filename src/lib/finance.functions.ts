@@ -8,7 +8,7 @@ export const getFinance=createServerFn({method:'GET'}).handler(async()=>{
  const token=getCookie('spendsmart_workspace');
  const q=supabaseAdmin.from('finance_workspaces').select('transactions,budgets');
  const {data,error}=await (token?q.eq('capability_hash',await hash(token)):q.eq('id',demoId)).single();
- if(error||!data)throw new Error('Your finances could not load. Please try again.');
+ if(error||!data){console.error('Finance read failed',error);throw new Error('Your finances could not load. Please try again.');}
  return stateSchema.parse(data);
 });
 export const saveFinance=createServerFn({method:'POST'}).inputValidator(stateSchema).handler(async({data})=>{
